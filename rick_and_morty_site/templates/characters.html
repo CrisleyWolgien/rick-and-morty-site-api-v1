@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='characters.css') }}">
+    <title>Rick and morty</title>
+</head>
+<body>
+    <h1>Personagens</h1>
+    <h3><strong>Personagens</strong></h3>
+<h4 class="quantia">Quantia de Personagens: {{characters.info.count}}</h4>
+    <ul class="lista_dos_personagem">
+        {% for character in characters['results']%}
+        <li class="card_personagem">
+            <strong class="Nome_personagens">{{character.name}}</strong ><br>
+                <ul>
+                    <li class="Status_personagem">Status: {{character.status}}</li>
+                    <li class="species_personagem">Especie: {{character.species}}</li>
+                    <li class="species_personagem">Genero: {{character.gender}}</li>
+                    <li class="species_personagem">Origem: {{character.origin.name}}</li>
+                </ul>
+            <img src="{{ character.image}}" class="img_personagem">
+        </li>
+        {% endfor %}
+    </ul>
+   
+    <div class="navegacao">
+        {% if page > 1 %}
+        <a href="{{ url_for('personagens', page=page - 1) }}">
+            <button>Anterior</button>
+        </a>
+        {% endif %}
+
+        <a href="{{ url_for('homepage') }}">
+            <button>Voltar</button>
+        </a>
+    
+        <a href="{{ url_for('personagens', page=page + 1) }}">
+            <button>Próxima</button>
+        </a>
+    </div>
+    
+</body>
+</html>

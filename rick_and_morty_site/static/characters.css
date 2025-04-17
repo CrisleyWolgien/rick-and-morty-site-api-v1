@@ -1,0 +1,109 @@
+/* homepage.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0c10;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #66fcf1;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.card_personagem{
+    background-color: #1f2833;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(102, 252, 241, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card_personagem:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.3);
+}
+
+.img_personagem {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: 2px solid #45a29e;
+}
+
+.Nome_personagens{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #66fcf1;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.Status_personagem,
+.species_personagem {
+    font-size: 0.95em;
+    color: #c5c6c7;
+    margin: 6px 0;
+    line-height: 1.4;
+}
+
+.navegacao{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+
+button {
+    display: block;
+    margin: 40px auto;
+    padding: 12px 25px;
+    background-color: #66fcf1;
+    color: #0b0c10;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a{
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+
+
+button:hover {
+    background-color: #45a29e;
+    transform: translateY(-2px);
+}
+.quantia{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #66fcf1;
+    margin-bottom: 10px;
+    display: block;
+}

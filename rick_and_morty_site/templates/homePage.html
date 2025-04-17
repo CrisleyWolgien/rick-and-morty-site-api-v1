@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+
+    <title>Rick and Morty</title>
+</head>
+<body>
+
+<h1>Api Ricky and Morty</h1>
+
+<h3><strong>Personagens</strong></h3>
+<h4 class="quantia">Quantia de Personagens: {{characters.info.count}}</h4>
+    <ul class="lista_dos_personagem">
+        {% for character in characters['results'][:8]%}
+        <li class="card_personagem">
+            <strong class="Nome_personagens">{{character.name}}</strong ><br>
+                <ul>
+                    <li class="Status_personagem">Status: {{character.status}}</li>
+                    <li class="species_personagem">Especie: {{character.species}}</li>
+                </ul>
+            <img src="{{ character.image}}" class="img_personagem">
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('personagens') }}">
+        <button>Ver Mais</button>
+    </a>
+
+    <h3><strong>Episodios</strong></h3>
+    <h4 class="quantia">Quantia de episodios: {{episodes.info.count}}</h4>
+    <ul class="lista_dos_Episodios">
+        {% for episode in episodes['results'][:8]%}
+        <li class="card_Episodios">
+            <strong class="Nome_Episodios">{{episode.name}}</strong ><br>
+                <ul>
+                    <li class="episode_Episodios">Episodio: {{episode.episode}}</li>
+                    <li class="lancamento_Episodios">Data de lançamento: {{episode.air_date}}</li>
+                </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <button>Ver Mais</button>
+
+    <h3><strong>Localizações</strong></h3>
+    <h4 class="quantia">Quantia de Localizações: {{locations.info.count}}</h4>
+    <ul class="lista_dos_location">
+        {% for location in locations['results'][:8] %}
+        <li class="card_location">
+            <span class="Nome_location">{{ location.name }}</span>
+            <div class="location_info">
+                <p><strong>Tipo:</strong> {{ location.type }}</p>
+                <p><strong>Dimensão:</strong> {{ location.dimension }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <button>Ver Mais</button>
+</body>
+</html>
